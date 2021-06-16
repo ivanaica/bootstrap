@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="input" name="search">
+    <button name="search">Pretrazi</button>
+    <ul class="prvaul"></ul>
+    <ul class="drugaul"></ul>
+
+<script type="text/javascript">
+    
+    let brojevi = [1, 11, 34, 14, 15, 99];
+
+    let input = document.querySelector('input');
+    let btn = document.querySelector('button');
+    let body = document.querySelector('body');
+    const  liste = document.querySelectorAll('ul');
+    btn.addEventListener('click', pretrazi);
+
+    function pretrazi(){
+        const broj = input.value;
+        for (let i = 0; i < brojevi.length; i++) {
+            if(broj == brojevi[i]){
+                const listItem = document.createElement('li');
+                listItem.textContent=broj;
+                liste[0].appendChild(listItem);
+            liste[0].style.backgroundColor = 'green';
+            break;
+            }else{
+            const listItem = document.createElement('li');
+            listItem.textContent=broj;
+            liste[1].appendChild(listItem);
+            liste[1].style.backgroundColor = 'red';
+            break;
+        }
+        
+
+    }
+}
+
+</script>
+</body>
+</html>
